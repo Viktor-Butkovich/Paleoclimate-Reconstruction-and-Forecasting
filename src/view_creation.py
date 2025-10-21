@@ -237,6 +237,7 @@ print(preprocessed)
 preprocessed.write_parquet(
     "../Outputs/long_term_global_anomaly_view.parquet"
 )  # Only contains original columns
+preprocessed.write_csv("../Outputs/long_term_global_anomaly_view.csv")
 
 # Create an empty JSON file for the MSE scoreboard
 scoreboard_path = "../Outputs/scoreboard.json"
