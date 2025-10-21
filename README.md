@@ -27,7 +27,9 @@ To run locally, clone the repository and perform the following:
     - Performs Torch neural network forecasting:
         - `torch_model`: Torch neural network with manually configured hyperparameters
         - `genetic_torch_model`: Torch neural network with hyperparameters optimized using a genetic algorithm
-5. Alternatively, run `./src/orchestrator_no_etl.bat` (Windows) or `./src/orchestrator.sh` (Linux) to only perform the steps after view creation, using pre-computed ETL outputs from the repository.
+5. Alternatively, run `./src/orchestrator_no_etl.bat` (Windows) or `./src/orchestrator_no_etl.sh` (Linux) to only perform the steps after view creation, using pre-computed ETL outputs from the repository.
+
+Note: Running the ETL pipeline requires the raw data to be pulled into the expected format in the `Data` directory, which is a complex process with many manual steps, including downloading/unzipping Temp12k temperature proxy samples, downloading Milankovitch simulation results, etc. This pipeline produces the pre-computed datasets in the `Outputs` directory. To avoid gathering the raw source data, simply use the `./src/orchestrator_no_etl` scripts to run statistical analysis, ML, and visualization on the pre-computed dataset outputs.
 
 Recent temperature anomaly:
 ![Recent Temperature Anomaly](Outputs/modern_temperature_anomaly.png)
